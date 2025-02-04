@@ -1,10 +1,37 @@
-{
-  "name": "@pptr/testserver",
-  "version": "0.5.0",
-  "description": "testing server",
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "tsc"
+delete
+end
+stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   },
   "repository": {
     "type": "git",
