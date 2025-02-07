@@ -1,4 +1,3 @@
-{
-  "reporter": ["text", "html"],
-  "include": ["src/**/*"]
-}
+terminate
+void
+delete
