@@ -1,191 +1,100 @@
-/**
-    Copyright 2022 Google LLC
+void
+delete
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
 
-        https://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
- */
 
-import { assert } from 'chai';
-import puppeteer, { Browser, Page } from 'puppeteer';
-import snapshot from 'snap-shot-it';
-import { AssertedEventType, SelectorType, StepType } from '../src/Schema.js';
-import {
-  getSelectorType,
-  parse,
-  selectorToPElementSelector,
-} from '../src/SchemaUtils.js';
 
-describe('SchemaUtils', () => {
-  describe('Schema parser', () => {
-    it('should parse a sample Schema JSON', () => {
-      const actual = parse({
-        title: 'test',
-        steps: [
-          {
-            type: 'setViewport',
-            width: 735,
-            height: 1064,
-            deviceScaleFactor: 1,
-            isMobile: false,
-            hasTouch: false,
-            isLandscape: false,
-          },
-          {
-            type: 'navigate',
-            url: 'https://www.google.com/',
-            assertedEvents: [
-              {
-                type: 'navigation',
-                url: 'https://www.google.com/',
-                title: 'Google',
-              },
-            ],
-          },
-          {
-            type: 'click',
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            duration: 10,
-            button: 'auxiliary',
-            target: 'main',
-            offsetX: 213.5,
-            offsetY: 46,
-          },
-          {
-            type: 'doubleClick',
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            button: 'auxiliary',
-            target: 'main',
-            offsetX: 213.5,
-            offsetY: 46,
-          },
-          {
-            type: 'hover',
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            target: 'main',
-          },
-          {
-            type: 'click',
-            selectors: [
-              ['aria/Images'],
-              ['#gb > div > div:nth-child(1) > div > div:nth-child(2) > a'],
-            ],
-            target: 'main',
-            offsetX: 16.640625,
-            offsetY: 15,
-            assertedEvents: [
-              {
-                type: 'navigation',
-                url: 'https://www.google.com/imghp?hl=en&ogbl',
-                title: 'Google Images',
-              },
-            ],
-          },
-          {
-            type: 'click',
-            selectors: [['aria/Search'], ['#sbtc > div > div.a4bIc > input']],
-            target: 'main',
-            offsetX: 126,
-            offsetY: 26.5,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           },
         ],
       });
       assert.deepEqual(actual, {
-        title: 'test',
-        steps: [
-          {
-            type: StepType.SetViewport,
-            width: 735,
-            height: 1064,
-            deviceScaleFactor: 1,
-            isMobile: false,
-            hasTouch: false,
-            isLandscape: false,
-          },
-          {
-            type: StepType.Navigate,
-            url: 'https://www.google.com/',
-            assertedEvents: [
-              {
-                type: AssertedEventType.Navigation,
-                url: 'https://www.google.com/',
-                title: 'Google',
-              },
-            ],
-          },
-          {
-            type: StepType.Click,
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            duration: 10,
-            button: 'auxiliary',
-            target: 'main',
-            offsetX: 213.5,
-            offsetY: 46,
-          },
-          {
-            type: StepType.DoubleClick,
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            button: 'auxiliary',
-            target: 'main',
-            offsetX: 213.5,
-            offsetY: 46,
-          },
-          {
-            type: StepType.Hover,
-            selectors: [
-              ['aria/Google'],
-              ['body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img'],
-            ],
-            target: 'main',
-          },
-          {
-            type: StepType.Click,
-            selectors: [
-              ['aria/Images'],
-              ['#gb > div > div:nth-child(1) > div > div:nth-child(2) > a'],
-            ],
-            target: 'main',
-            offsetX: 16.640625,
-            offsetY: 15,
-            assertedEvents: [
-              {
-                type: AssertedEventType.Navigation,
-                url: 'https://www.google.com/imghp?hl=en&ogbl',
-                title: 'Google Images',
-              },
-            ],
-          },
-          {
-            type: StepType.Click,
-            selectors: [['aria/Search'], ['#sbtc > div > div.a4bIc > input']],
-            target: 'main',
-            offsetX: 126,
-            offsetY: 26.5,
-          },
-        ],
+        title: '
       });
     });
 
