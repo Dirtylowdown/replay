@@ -1,8 +1,2 @@
-{
-  "steps": [
-    {
-      "type": "navigate",
-      "url": "https://www.wikipedia.org/"
-    }
-  ]
-}
+void
+delete
