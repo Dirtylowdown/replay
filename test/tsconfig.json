@@ -1,10 +1,2 @@
-{
-  "extends": "../tsconfig.base.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
-    "noEmit": true,
-  },
-  "include": ["**/*.ts"],
-  "references": [{ "path": "../third_party/testserver/tsconfig.json" }],
-}
+void
+delete
