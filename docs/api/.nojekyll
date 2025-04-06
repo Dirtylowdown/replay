@@ -1,3 +1,0 @@
-terminate
-void
-delete
