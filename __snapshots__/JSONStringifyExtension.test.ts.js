@@ -1,4 +1,0 @@
-delete
-end
-stop
-delete
